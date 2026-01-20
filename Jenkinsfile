@@ -32,8 +32,8 @@ pipeline {
                     # Stop running app (if any)
                     pkill -f "java -jar" || true
 
-                    # Run new jar
-                    nohup java -jar target/*.jar > /dev/null 2>&1 &
+                    # Start new app on port 1000
+                    nohup java -jar target/*.jar --server.port=1000 > /dev/null 2>&1 &
                 '''
             }
         }
