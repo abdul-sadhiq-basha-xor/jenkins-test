@@ -27,15 +27,10 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                sh '''
-                    # Stop running app (if any)
-                    pkill -f "java -jar" || true
+    	steps {
+        	sh 'sudo systemctl restart springboot-app'
+    }
+}
 
-                    # Start new app on port 1000
-                    nohup java -jar target/*.jar --server.port=10000 > /dev/null 2>&1 &
-                '''
-            }
-        }
     }
 }
