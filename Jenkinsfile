@@ -33,7 +33,7 @@ pipeline {
                     pkill -f "java -jar" || true
 
                     # Start new app on port 1000
-                    nohup java -jar target/*.jar --server.port=1000 > /dev/null 2>&1 &
+                    nohup java -jar target/*.jar --server.port=10000 > /dev/null 2>&1 &
                 '''
             }
         }
