@@ -25,5 +25,17 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    # Stop running app (if any)
+                    pkill -f "java -jar" || true
+
+                    # Run new jar
+                    nohup java -jar target/*.jar > /dev/null 2>&1 &
+                '''
+            }
+        }
     }
 }
