@@ -1,5 +1,7 @@
 package com.jenkins;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class JenkinsApplicationTests {
 
 	@Test
-	void contextLoads() {
-	}
+    void sampleTest() {
+        System.out.println("Running Jenkins test...");
+        assertTrue(true);
+    }
 
 }
