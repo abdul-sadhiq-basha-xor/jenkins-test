@@ -9,7 +9,7 @@ public class Jenkins {
 	
 	@GetMapping
 	public String getMethod() {
-		return "Hello jenkins";	
+		return "Hello jenkins-Added the weeb Hook for the auto deployment";	
 	}
 
 }
